@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        ul{
+            text-align: center;
+        }
+        .head-1{
+            height: 100px;
+            width: 800px;
+            background-color:#d1d8e0;
+            margin: 20px auto;
+            padding: 10px;
+            border-radius: 100px;
+        }
+        body{
+            background-color: #273c75;
+        }
+        .day-btn{
+            height: 60px;
+            width: 400px;
+            background-color:#0be881;
+            margin: 20px 200px;
+            text-align: center;
+            border-radius: 100px;
+        }
+        .day-btn:hover{
+            background-color: #05c46b;
+        }
+        a{
+            text-decoration: none;
+            color:black;
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="head-1">    
+        <h1>Hello DMS Your's Weekly challenge</h1>
+    </div>
+    {% for days in week_names%}
+    <div class="head-1">
+            <div class="day-btn">
+                <a href="{% url 'index' days%}">{{days}}</a>
+            </div>
+    </div>
+    {%endfor%}
+</body>
+</html>
